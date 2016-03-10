@@ -102,15 +102,25 @@ function changeIt()
 <h2> Current Links</h2>
 <p><a href='https://github.com/'>github</a></p>
 
-<h2> Run code</h2>
-<p><a href='home.php?select=true&index=8'>edit this page</a></p>
-<p><a href='home.php?select=true&index=9'>edit ruby - hparse</a></p>
-<p><a href='home.php?select=true&index=7'>open cmd window - home</a></p>
-<p><a href='home.php?select=true&index=1'>open cmd window - rule1</a></p>
+<h2> Run code and view logs</h2>
 <p><a href='home.php?select=true&index=2'>open cmd window - rule1 - hparse</a></p>
-<p><a href='home.php?select=true&index=6'>open cmd window - Ajax</a></p>
 <p><a href='home.php?select=true&index=4'>open the log</a></p>
 <p><a href='home.php?select=true&index=5'>delete the log</a></p>
+
+<h2> Edit code</h2>
+<p><a href='home.php?select=true&index=8'>edit this page</a></p>
+<p><a href='home.php?select=true&index=9'>edit ruby - hparse</a></p>
+
+<h2> Command Windows</h2>
+<p><a href='home.php?select=true&index=7'>open cmd window - home</a></p>
+<p><a href='home.php?select=true&index=1'>open cmd window - rule1</a></p>
+<p><a href='home.php?select=true&index=6'>open cmd window - Ajax</a></p>
+
+<h2> References</h2>
+<p><a href='https://developers.google.com/web/tools/chrome-devtools/'>Chrome development tools</a></p>
+<p><a href='http://ruby.bastardsbook.com/chapters/html-parsing/'>Parsing HTML with Nokogiri</a></p>
+
+
 
 <h2> Other</h2>
 
