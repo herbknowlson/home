@@ -4,7 +4,6 @@
 <h1 id="heading"></h1>
 
 <style>
-
 h1 {
     color:black;
     font-family:verdana;
@@ -23,80 +22,81 @@ background-color:white;
 }
 </style>
 
-
 <script>
-//console.log(" - home.php - start");
+console.log("start");
 <?php
-//date_default_timezone_set('America/Chicago');
-//error_log(date('Y-m-d H:i:s') . " " . "- home.php - start" .  "\n", 3, "E:/xampp/php/logs/execution.log");
-
 ?>
 
 function changeIt()
 {
-  $msg = "- home.php - changeIt()";
-  console.log($msg);
+  console.log("changeIt()");
   var i = "../../home/img/cs.jpg";
   bg = "url(" + i + ") no-repeat";
-  document.getElementById("heading").innerHTML=bg;
+  //document.getElementById("heading").innerHTML=bg;
   document.body.style.background = bg;
   document.body.style.backgroundSize = 'cover';
 }
 
 <?php
-
+  function logPhp($index, $desc)  {
+	date_default_timezone_set('America/Chicago');
+	error_log(date('Y-m-d H:i:s') . " " . " home.php, doSelect(), index = " . $index . ", " . $desc . "\n", 3, "E:/xampp/php/logs/execution.log");		
+  }
+  
   function doSelect()
   {
-    //error_log(date('Y-m-d H:i:s') . " " . "- home.php - doSelect()" .  "\n", 3, "E:/xampp/php/logs/execution.log");
-    if ($_GET["index"] == "3") {
-        date_default_timezone_set('America/Chicago');
-        console.log(" - home.php - doSelect() index = 3");
+	$index = $_GET["index"];
+	if ($index == "3") {
+		$desc = "batchIndexV03.bat";
+		logPhp($_GET["index"], $desc);
     	exec("E:/xampp/htdocs/Ajax/batchIndexV03.bat " . $_GET["index1"] . " " . $_GET["index2"]);
     	header("Location: index2.php?selection=1");
 	} elseif ($_GET["index"] == "4") {
-        //date_default_timezone_set('America/Chicago');
-        //error_log(date('Y-m-d H:i:s') . " " . "- home.php - doSelect - index = 4" .  "\n", 3, "E:/xampp/php/logs/execution.log");
-		exec("E:/xampp/htdocs/home/openLog.bat");
+		$desc = "openLog.bat";
+		logPhp($_GET["index"], $desc);
+        exec("E:/xampp/htdocs/home/openLog.bat");
 		header("Location: home.php?selection=false");
   	} elseif ($_GET["index"] == "5") {
-        date_default_timezone_set('America/Chicago');
-        error_log(date('Y-m-d H:i:s') . " " . "- home.php - doSelect - index = 5" .  "\n", 3, "E:/xampp/php/logs/execution.log");
-		exec("E:/xampp/htdocs/home/deleteLog.bat");
+		$desc = "deleteLog.bat";
+		logPhp($_GET["index"], $desc);
+        exec("E:/xampp/htdocs/home/deleteLog.bat");
 		header("Location: home.php?selection=false");
 	} elseif ($_GET["index"] == "6") {
-        date_default_timezone_set('America/Chicago');
-        error_log(date('Y-m-d H:i:s') . " " . "- home.php - doSelect - index = 6" .  "\n", 3, "E:/xampp/php/logs/execution.log");
-		exec("E:/xampp/htdocs/home/openCmdAjax.bat");
+		$desc = "openCmdAjax.bat";
+		logPhp($_GET["index"], $desc);
+        exec("E:/xampp/htdocs/home/openCmdAjax.bat");
 		header("Location: home.php?selection=false");
 	} elseif ($_GET["index"] == "7") {
-        date_default_timezone_set('America/Chicago');
-        error_log(date('Y-m-d H:i:s') . " " . "- home.php - doSelect - index = 7" .  "\n", 3, "E:/xampp/php/logs/execution.log");
-		exec("E:/xampp/htdocs/home/openCmdHome.bat");
+		$desc = "openCmdHome.bat";
+		logPhp($_GET["index"], $desc);
+        exec("E:/xampp/htdocs/home/openCmdHome.bat");
 		header("Location: home.php?selection=false");
 	} elseif ($_GET["index"] == "8") {
-        date_default_timezone_set('America/Chicago');
-        error_log(date('Y-m-d H:i:s') . " " . "- home.php - doSelect - index = 8" .  "\n", 3, "E:/xampp/php/logs/execution.log");
-		exec("E:/xampp/htdocs/home/editHome.bat");
+		$desc = "editHome.bat";
+		logPhp($_GET["index"], $desc);
+        exec("E:/xampp/htdocs/home/editHome.bat");
 		header("Location: home.php?selection=false");
-    } else {
-		error_log(date('Y-m-d H:i:s') . " " . "- home.php - doSelect - index = 1" .  "\n", 3, "E:/xampp/php/logs/execution.log");
-    	exec("E:/xampp/htdocs/home/openCmdRule1.bat ");
+    } elseif ($_GET["index"] == "1") {
+		$desc = "openCmdRule1.bat";
+		logPhp($_GET["index"], $desc);
+		exec("E:/xampp/htdocs/home/openCmdRule1.bat");
+    	header("Location: home.php?selection=false");
+	} elseif ($_GET["index"] == "2") {
+		$desc = "openCmdRule1.bat";
+		logPhp($_GET["index"], $desc);
+		exec("E:/xampp/htdocs/home/openCmdRule1_hparse.bat");
     	header("Location: home.php?selection=false");
     }
   }
 
   if (isset($_GET['select'])) {
-    //date_default_timezone_set('America/Chicago');
-    //error_log(date('Y-m-d H:i:s') . " - home.php - call doSelect()" .  "\n", 3, "E:/xampp/php/logs/execution.log");
-    doSelect();
+	doSelect();
    }
 ?>
 
 </script>
-
-
-
 </head>
+
 <body link="blue" onload="changeIt();">
 	
 <h2> Current Links</h2>
@@ -105,7 +105,8 @@ function changeIt()
 <h2> Run code</h2>
 <p><a href='home.php?select=true&index=8'>edit this page</a></p>
 <p><a href='home.php?select=true&index=7'>open cmd window - home</a></p>
-<p><a href='home.php?select=true'>open cmd window - rule1</a></p>
+<p><a href='home.php?select=true&index=1'>open cmd window - rule1</a></p>
+<p><a href='home.php?select=true&index=2'>open cmd window - rule1 - hparse</a></p>
 <p><a href='home.php?select=true&index=6'>open cmd window - Ajax</a></p>
 <p><a href='home.php?select=true&index=4'>open the log</a></p>
 <p><a href='home.php?select=true&index=5'>delete the log</a></p>
