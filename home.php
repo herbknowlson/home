@@ -73,6 +73,11 @@ function changeIt()
         error_log(date('Y-m-d H:i:s') . " " . "- home.php - doSelect - index = 7" .  "\n", 3, "E:/xampp/php/logs/execution.log");
 		exec("E:/xampp/htdocs/home/openCmdHome.bat");
 		header("Location: home.php?selection=false");
+	} elseif ($_GET["index"] == "8") {
+        date_default_timezone_set('America/Chicago');
+        error_log(date('Y-m-d H:i:s') . " " . "- home.php - doSelect - index = 8" .  "\n", 3, "E:/xampp/php/logs/execution.log");
+		exec("E:/xampp/htdocs/home/editHome.bat");
+		header("Location: home.php?selection=false");
     } else {
 		error_log(date('Y-m-d H:i:s') . " " . "- home.php - doSelect - index = 1" .  "\n", 3, "E:/xampp/php/logs/execution.log");
     	exec("E:/xampp/htdocs/home/openCmdRule1.bat ");
@@ -98,6 +103,7 @@ function changeIt()
 <p><a href='https://github.com/'>github</a></p>
 
 <h2> Run code</h2>
+<p><a href='home.php?select=true&index=8'>edit this page</a></p>
 <p><a href='home.php?select=true&index=7'>open cmd window - home</a></p>
 <p><a href='home.php?select=true'>open cmd window - rule1</a></p>
 <p><a href='home.php?select=true&index=6'>open cmd window - Ajax</a></p>
