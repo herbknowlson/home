@@ -46,14 +46,14 @@ function changeIt()
   function doSelect()
   {
 	$index = $_GET["index"];
-	if ($index == "3") {
-		$desc = "batchIndexV03.bat";
+	if ($index == "9") {
+		$desc = "edit_hparse.bat";
 		logPhp($_GET["index"], $desc);
-    	exec("E:/xampp/htdocs/Ajax/batchIndexV03.bat " . $_GET["index1"] . " " . $_GET["index2"]);
-    	header("Location: index2.php?selection=1");
+    	exec("E:/xampp/htdocs/home/edit_hparse.bat");
+    	header("Location: home.php?selection=false");
 	} elseif ($_GET["index"] == "4") {
 		$desc = "openLog.bat";
-		logPhp($_GET["index"], $desc);
+		//logPhp($_GET["index"], $desc);
         exec("E:/xampp/htdocs/home/openLog.bat");
 		header("Location: home.php?selection=false");
   	} elseif ($_GET["index"] == "5") {
@@ -104,6 +104,7 @@ function changeIt()
 
 <h2> Run code</h2>
 <p><a href='home.php?select=true&index=8'>edit this page</a></p>
+<p><a href='home.php?select=true&index=9'>edit ruby - hparse</a></p>
 <p><a href='home.php?select=true&index=7'>open cmd window - home</a></p>
 <p><a href='home.php?select=true&index=1'>open cmd window - rule1</a></p>
 <p><a href='home.php?select=true&index=2'>open cmd window - rule1 - hparse</a></p>
