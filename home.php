@@ -119,7 +119,7 @@ function changeIt()
 <h2> References</h2>
 <p><a href='https://developers.google.com/web/tools/chrome-devtools/'>Chrome development tools</a></p>
 <p><a href='http://ruby.bastardsbook.com/chapters/html-parsing/'>Parsing HTML with Nokogiri</a></p>
-
+<p><a href='https://blog.engineyard.com/2010/getting-started-with-nokogiri'>Getting Started with Nokogiri</a></p>
 
 
 <h2> Other</h2>
